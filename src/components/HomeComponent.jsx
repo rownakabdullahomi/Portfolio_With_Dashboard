@@ -17,7 +17,7 @@ const HomeComponent = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              HI, I'M AMIT!
+              HI, I'M ROWNAK!
               <span className=" absolute bottom-[15px] right-[-100px]">
                 <img
                   src="assets/images/icon/icon-1.png"
@@ -31,7 +31,7 @@ const HomeComponent = () => {
               data-aos="fade-up"
               data-aos-delay="150"
             >
-              CREATIVE <span className="text-theme">DEVELOPER!</span>
+              FULLSTACK <span className="text-theme">DEVELOPER!</span>
             </h2>
             <br />
             <p className="text-text" data-aos="fade-up" data-aos-delay="200">

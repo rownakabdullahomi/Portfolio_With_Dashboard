@@ -42,6 +42,44 @@ const DashboardLayout = () => {
               Update Experience
             </NavLink>
           </div>
+          <div>
+            <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Education</p>
+            <NavLink
+              to="/dashboard/create-education"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Education
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-education/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Education
+            </NavLink>
+          </div>
+          <div>
+            <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Skills</p>
+            <NavLink
+              to="/dashboard/create-skill"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Skill
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-skill/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Skill
+            </NavLink>
+          </div>
         </nav>
 
         {/* Back to Home Button */}

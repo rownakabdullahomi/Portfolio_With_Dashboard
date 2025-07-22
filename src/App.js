@@ -17,6 +17,10 @@ import DashboardHome from "./pages/dashboard/DashboardHome";
 import Settings from "./pages/dashboard/Settings";
 import CreateExperience from "./pages/dashboard/experience/CreateExperience";
 import UpdateExperience from "./pages/dashboard/experience/UpdateExperience";
+import CreateEducation from "./pages/dashboard/education/CreateEducation";
+import UpdateEducation from "./pages/dashboard/education/UpdateEducation";
+import CreateSkill from "./pages/dashboard/skill/CreateSkill";
+import UpdateSkill from "./pages/dashboard/skill/UpdateSkill";
 
 function App() {
   useEffect(() => {
@@ -46,7 +50,11 @@ function App() {
           <Route index element={<DashboardHome />} />
           <Route path="settings" element={<Settings />} />
           <Route path="/dashboard/create-experience" element={<CreateExperience />} />
-<Route path="/dashboard/update-experience/:id" element={<UpdateExperience />} />
+          <Route path="/dashboard/update-experience/:id" element={<UpdateExperience />} />
+          <Route path="/dashboard/create-education" element={<CreateEducation />} />
+          <Route path="/dashboard/update-education/:id" element={<UpdateEducation />} />
+          <Route path="/dashboard/create-skill" element={<CreateSkill />} />
+          <Route path="/dashboard/update-skill/:id" element={<UpdateSkill />} />
         </Route>
 
         {/* Fallback Route */}
