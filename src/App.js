@@ -29,6 +29,8 @@ import CreateTestimonial from "./pages/testimonial/CreateTestimonial";
 import UpdateTestimonial from "./pages/testimonial/UpdateTestimonial";
 import CreateBlog from "./pages/dashboard/blog/CreateBlog";
 import UpdateBlog from "./pages/dashboard/blog/UpdateBlog";
+import ShowContacts from "./pages/dashboard/contact/ShowContacts";
+import ContactDetails from "./pages/dashboard/contact/ContactDetails";
 
 function App() {
   useEffect(() => {
@@ -71,7 +73,8 @@ function App() {
           <Route path="/dashboard/update-testimonial/:id" element={<UpdateTestimonial />} />
           <Route path="/dashboard/create-blog" element={<CreateBlog />} />
           <Route path="/dashboard/update-blog/:id" element={<UpdateBlog />} />
-
+          <Route path="/dashboard/contacts" element={<ShowContacts />} />
+          <Route path="/dashboard/contact-details/:id" element={<ContactDetails />} />
 
         </Route>
 

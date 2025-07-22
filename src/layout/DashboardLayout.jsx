@@ -168,6 +168,19 @@ const DashboardLayout = () => {
               Update Blog
             </NavLink>
           </div>
+          <div>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Contacts
+            </p>
+            <NavLink
+              to="/dashboard/contacts"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              All Contacts
+            </NavLink>
+          </div>
         </nav>
 
         {/* Back to Home Button */}
