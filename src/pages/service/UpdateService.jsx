@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { FaBlackberry, FaCode, FaChartLine, FaPaintBrush } from "react-icons/fa";
 
+// Icon list
 const iconOptions = {
   FaBlackberry: <FaBlackberry />,
   FaCode: <FaCode />,
@@ -8,12 +10,24 @@ const iconOptions = {
   FaPaintBrush: <FaPaintBrush />,
 };
 
-const CreateService = () => {
+const UpdateService = () => {
+  const { id } = useParams();
+
   const [service, setService] = useState({
     icon: "FaBlackberry",
     title: "",
     description: "",
   });
+
+  useEffect(() => {
+    // Dummy fetch for demo
+    setService({
+      icon: "FaBlackberry",
+      title: "Good Business Strategy",
+      description:
+        "Counseled for new companies, and teamed up with capable individuals to make computerized items for both business and purchaser use.",
+    });
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,12 +36,12 @@ const CreateService = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Service Data:", service);
+    console.log("Updating service:", service);
   };
 
   return (
     <div className="max-w-3xl mx-auto bg-gray-900 text-white p-6 rounded-xl shadow-lg">
-      <h2 className="text-2xl font-bold mb-6">Create Service</h2>
+      <h2 className="text-2xl font-bold mb-6">Update Service</h2>
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Icon Picker */}
         <div>
@@ -38,7 +52,7 @@ const CreateService = () => {
             name="icon"
             value={service.icon}
             onChange={handleChange}
-            className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             {Object.keys(iconOptions).map((iconKey) => (
               <option key={iconKey} value={iconKey}>
@@ -55,32 +69,32 @@ const CreateService = () => {
         <input
           type="text"
           name="title"
-          placeholder="e.g. Good Business Strategy"
+          placeholder="Service title"
           value={service.title}
           onChange={handleChange}
-          className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
         />
 
         {/* Description */}
         <textarea
           name="description"
-          placeholder="Enter service description"
+          placeholder="Service description"
           value={service.description}
           onChange={handleChange}
           rows={4}
-          className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-gray-800 border border-gray-700 p-3 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
         />
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 transition px-6 py-2 rounded text-white font-medium"
+          className="bg-green-600 hover:bg-green-700 transition px-6 py-2 rounded text-white font-medium"
         >
-          Submit
+          Update
         </button>
       </form>
     </div>
   );
 };
 
-export default CreateService;
+export default UpdateService;

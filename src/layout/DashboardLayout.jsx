@@ -7,9 +7,9 @@ const DashboardLayout = () => {
   const activeClass = "bg-gray-700";
 
   return (
-    <div className="min-h-screen flex">
+    <div className="flex min-h-screen">
       {/* Sidebar */}
-      <aside className="w-64 bg-gray-900 text-white p-5 space-y-6 shadow-md">
+      <aside className="w-64 space-y-6 bg-gray-900 p-5 text-white shadow-md">
         <h2 className="text-2xl font-bold">Dashboard</h2>
 
         <nav className="space-y-2">
@@ -22,9 +22,10 @@ const DashboardLayout = () => {
             Dashboard Home
           </NavLink>
 
-
           <div>
-            <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Experience</p>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Experience
+            </p>
             <NavLink
               to="/dashboard/create-experience"
               className={({ isActive }) =>
@@ -43,7 +44,9 @@ const DashboardLayout = () => {
             </NavLink>
           </div>
           <div>
-            <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Education</p>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Education
+            </p>
             <NavLink
               to="/dashboard/create-education"
               className={({ isActive }) =>
@@ -62,7 +65,7 @@ const DashboardLayout = () => {
             </NavLink>
           </div>
           <div>
-            <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Skills</p>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">Skills</p>
             <NavLink
               to="/dashboard/create-skill"
               className={({ isActive }) =>
@@ -81,32 +84,76 @@ const DashboardLayout = () => {
             </NavLink>
           </div>
           <div>
-  <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Portfolio</p>
-  <NavLink
-    to="/dashboard/create-portfolio"
-    className={({ isActive }) =>
-      `${linkClass} ${isActive ? activeClass : ""}`
-    }
-  >
-    Create Portfolio
-  </NavLink>
-  <NavLink
-    to="/dashboard/update-portfolio/1"
-    className={({ isActive }) =>
-      `${linkClass} ${isActive ? activeClass : ""}`
-    }
-  >
-    Update Portfolio
-  </NavLink>
-</div>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Portfolio
+            </p>
+            <NavLink
+              to="/dashboard/create-portfolio"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Portfolio
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-portfolio/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Portfolio
+            </NavLink>
+          </div>
 
+          <div>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Services
+            </p>
+            <NavLink
+              to="/dashboard/create-service"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Service
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-service/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Service
+            </NavLink>
+          </div>
+          <div>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Testimonials
+            </p>
+            <NavLink
+              to="/dashboard/create-testimonial"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Testimonial
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-testimonial/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Testimonial
+            </NavLink>
+          </div>
         </nav>
 
         {/* Back to Home Button */}
         <div className="pt-8">
           <Link
             to="/"
-            className="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+            className="block rounded bg-blue-600 px-4 py-2 text-center font-semibold text-white transition hover:bg-blue-700"
           >
             ← Back to Home
           </Link>
@@ -114,7 +161,7 @@ const DashboardLayout = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 bg-black min-h-screen text-white">
+      <main className="min-h-screen flex-1 bg-black p-6 text-white">
         <Outlet />
       </main>
     </div>

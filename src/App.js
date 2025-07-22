@@ -23,6 +23,10 @@ import CreateSkill from "./pages/dashboard/skill/CreateSkill";
 import UpdateSkill from "./pages/dashboard/skill/UpdateSkill";
 import CreatePortfolio from "./pages/dashboard/portfolio/CreatePortfolio";
 import UpdatePortfolio from "./pages/dashboard/portfolio/UpdatePortfolio";
+import CreateService from "./pages/service/CreateService";
+import UpdateService from "./pages/service/UpdateService";
+import CreateTestimonial from "./pages/testimonial/CreateTestimonial";
+import UpdateTestimonial from "./pages/testimonial/UpdateTestimonial";
 
 function App() {
   useEffect(() => {
@@ -58,7 +62,12 @@ function App() {
           <Route path="/dashboard/create-skill" element={<CreateSkill />} />
           <Route path="/dashboard/update-skill/:id" element={<UpdateSkill />} />
           <Route path="/dashboard/create-portfolio" element={<CreatePortfolio />} />
-<Route path="/dashboard/update-portfolio/:id" element={<UpdatePortfolio />} />
+          <Route path="/dashboard/update-portfolio/:id" element={<UpdatePortfolio />} />
+          <Route path="/dashboard/create-service" element={<CreateService />} />
+          <Route path="/dashboard/update-service/:id" element={<UpdateService />} />
+          <Route path="/dashboard/create-testimonial" element={<CreateTestimonial />} />
+          <Route path="/dashboard/update-testimonial/:id" element={<UpdateTestimonial />} />
+
 
         </Route>
 
