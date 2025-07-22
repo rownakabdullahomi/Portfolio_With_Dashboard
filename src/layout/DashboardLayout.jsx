@@ -1,5 +1,5 @@
 // src/layout/DashboardLayout.jsx
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 
 const DashboardLayout = () => {
   const linkClass =
@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-gray-800 text-white p-5 space-y-6">
+      <aside className="w-64 bg-gray-900 text-white p-5 space-y-6 shadow-md">
         <h2 className="text-2xl font-bold">Dashboard</h2>
 
         <nav className="space-y-2">
@@ -43,10 +43,20 @@ const DashboardLayout = () => {
             </NavLink>
           </div>
         </nav>
+
+        {/* Back to Home Button */}
+        <div className="pt-8">
+          <Link
+            to="/"
+            className="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+          >
+            ← Back to Home
+          </Link>
+        </div>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 min-h-screen">
+      <main className="flex-1 p-6 bg-black min-h-screen text-white">
         <Outlet />
       </main>
     </div>
