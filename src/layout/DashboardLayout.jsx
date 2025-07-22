@@ -147,6 +147,27 @@ const DashboardLayout = () => {
               Update Testimonial
             </NavLink>
           </div>
+          <div>
+            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
+              Blogs
+            </p>
+            <NavLink
+              to="/dashboard/create-blog"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Create Blog
+            </NavLink>
+            <NavLink
+              to="/dashboard/update-blog/1"
+              className={({ isActive }) =>
+                `${linkClass} ${isActive ? activeClass : ""}`
+              }
+            >
+              Update Blog
+            </NavLink>
+          </div>
         </nav>
 
         {/* Back to Home Button */}
