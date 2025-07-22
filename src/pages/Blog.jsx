@@ -9,7 +9,7 @@ const Blog = () => {
       <MasterLayout>
         <Suspense fallback={<InitLoader />}>
           <Helmet>
-            <title>Blog || Lariv - React Portfolio Template</title>
+            <title>Blog || React Portfolio Template</title>
             <meta
               name="description"
               content="Lariv - React Portfolio Template"

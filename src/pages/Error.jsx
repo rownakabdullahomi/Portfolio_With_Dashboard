@@ -10,7 +10,7 @@ const Error = () => {
       <MasterLayout>
         <Suspense fallback={<InitLoader />}>
           <Helmet>
-            <title>Error || Lariv - React Portfolio Template</title>
+            <title>Error || React Portfolio Template</title>
             <meta
               name="description"
               content="Lariv - React Portfolio Template"

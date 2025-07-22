@@ -10,10 +10,10 @@ const Home = () => {
       <MasterLayout>
         <Suspense fallback={<InitLoader />}>
           <Helmet>
-            <title>Home || Lariv - React Portfolio Template</title>
+            <title>Home || React Portfolio</title>
             <meta
               name="description"
-              content="Lariv - React Portfolio Template"
+              content="React Portfolio Template"
             />
           </Helmet>
           <HomeComponent />

@@ -98,7 +98,7 @@ const MasterLayout = (props) => {
                       className={(navData) =>
                         navData.isActive ? "navActive" : "navNotActive"
                       }
-                      to={"/dashboard"}
+                      to={"/dashboard/home"}
                     >
                       Dashboard
                     </NavLink>
@@ -214,6 +214,18 @@ const MasterLayout = (props) => {
                     Contact
                   </NavLink>
                 </li>
+                <li className=" text-[18px] font-semibold">
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive
+                        ? "inline-block py-[8px]  text-theme"
+                        : "inline-block py-[8px]  text-white transition-all duration-300 hover:text-theme"
+                    }
+                    to={"/dashboard/home"}
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
               </ul>
             </nav>
             <div className="my-[30px] border-t border-[#ddd] "></div>
@@ -259,7 +271,7 @@ const MasterLayout = (props) => {
           <div className="container mx-auto  flex justify-center pb-[40px]">
             <div>
               <p className="text-center text-text">
-                Copyright <span className="text-theme">Lariv</span> ©2023. All
+                Copyright <span className="text-theme">Rownak</span> ©{new Date().getFullYear()}. All
                 rights reserved
               </p>
               <div className="mt-[20px] flex justify-center text-center">

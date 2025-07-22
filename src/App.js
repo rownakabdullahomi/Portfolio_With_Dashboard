@@ -57,7 +57,7 @@ function App() {
 
         {/* Dashboard Layout with Nested Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<DashboardHome />} />
+          <Route path="home" element={<DashboardHome />} />
           <Route path="settings" element={<Settings />} />
           <Route path="/dashboard/create-experience" element={<CreateExperience />} />
           <Route path="/dashboard/update-experience/:id" element={<UpdateExperience />} />

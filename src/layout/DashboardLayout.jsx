@@ -1,20 +1,33 @@
-// src/layout/DashboardLayout.jsx
 import { Outlet, NavLink, Link } from "react-router-dom";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; 
 
 const DashboardLayout = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const linkClass =
     "block px-4 py-2 rounded hover:bg-gray-700 transition duration-200";
   const activeClass = "bg-gray-700";
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-black text-white">
       {/* Sidebar */}
-      <aside className="w-64 space-y-6 bg-gray-900 p-5 text-white shadow-md">
-        <h2 className="text-2xl font-bold">Dashboard</h2>
+      <aside
+        className={`fixed left-0 top-0 z-30 h-screen w-64 transform overflow-y-auto bg-gray-900 p-5 shadow-md transition-transform duration-300 lg:static lg:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="mb-6 flex items-center justify-between lg:hidden">
+          <h2 className="text-xl font-bold">Dashboard</h2>
+          <button onClick={() => setIsOpen(false)} className="text-white">
+            <X size={24} />
+          </button>
+        </div>
+
+        <h2 className="mb-4 hidden text-2xl font-bold lg:block">Dashboard</h2>
 
         <nav className="space-y-2">
           <NavLink
-            to="/dashboard"
+            to="/dashboard/home"
             className={({ isActive }) =>
               `${linkClass} ${isActive ? activeClass : ""}`
             }
@@ -22,168 +35,85 @@ const DashboardLayout = () => {
             Dashboard Home
           </NavLink>
 
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Experience
-            </p>
-            <NavLink
+          {/* Experience */}
+          <Section title="Experience">
+            <NavLinkItem
               to="/dashboard/create-experience"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Experience
-            </NavLink>
-            <NavLink
+              label="Create Experience"
+            />
+            <NavLinkItem
               to="/dashboard/update-experience/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Experience
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Education
-            </p>
-            <NavLink
-              to="/dashboard/create-education"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Education
-            </NavLink>
-            <NavLink
-              to="/dashboard/update-education/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Education
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">Skills</p>
-            <NavLink
-              to="/dashboard/create-skill"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Skill
-            </NavLink>
-            <NavLink
-              to="/dashboard/update-skill/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Skill
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Portfolio
-            </p>
-            <NavLink
-              to="/dashboard/create-portfolio"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Portfolio
-            </NavLink>
-            <NavLink
-              to="/dashboard/update-portfolio/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Portfolio
-            </NavLink>
-          </div>
+              label="Update Experience"
+            />
+          </Section>
 
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Services
-            </p>
-            <NavLink
+          {/* Education */}
+          <Section title="Education">
+            <NavLinkItem
+              to="/dashboard/create-education"
+              label="Create Education"
+            />
+            <NavLinkItem
+              to="/dashboard/update-education/1"
+              label="Update Education"
+            />
+          </Section>
+
+          {/* Skills */}
+          <Section title="Skills">
+            <NavLinkItem to="/dashboard/create-skill" label="Create Skill" />
+            <NavLinkItem to="/dashboard/update-skill/1" label="Update Skill" />
+          </Section>
+
+          {/* Portfolio */}
+          <Section title="Portfolio">
+            <NavLinkItem
+              to="/dashboard/create-portfolio"
+              label="Create Portfolio"
+            />
+            <NavLinkItem
+              to="/dashboard/update-portfolio/1"
+              label="Update Portfolio"
+            />
+          </Section>
+
+          {/* Services */}
+          <Section title="Services">
+            <NavLinkItem
               to="/dashboard/create-service"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Service
-            </NavLink>
-            <NavLink
+              label="Create Service"
+            />
+            <NavLinkItem
               to="/dashboard/update-service/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Service
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Testimonials
-            </p>
-            <NavLink
+              label="Update Service"
+            />
+          </Section>
+
+          {/* Testimonials */}
+          <Section title="Testimonials">
+            <NavLinkItem
               to="/dashboard/create-testimonial"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Testimonial
-            </NavLink>
-            <NavLink
+              label="Create Testimonial"
+            />
+            <NavLinkItem
               to="/dashboard/update-testimonial/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Testimonial
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Blogs
-            </p>
-            <NavLink
-              to="/dashboard/create-blog"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Create Blog
-            </NavLink>
-            <NavLink
-              to="/dashboard/update-blog/1"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              Update Blog
-            </NavLink>
-          </div>
-          <div>
-            <p className="mb-2 mt-4 text-sm uppercase text-gray-400">
-              Contacts
-            </p>
-            <NavLink
-              to="/dashboard/contacts"
-              className={({ isActive }) =>
-                `${linkClass} ${isActive ? activeClass : ""}`
-              }
-            >
-              All Contacts
-            </NavLink>
-          </div>
+              label="Update Testimonial"
+            />
+          </Section>
+
+          {/* Blogs */}
+          <Section title="Blogs">
+            <NavLinkItem to="/dashboard/create-blog" label="Create Blog" />
+            <NavLinkItem to="/dashboard/update-blog/1" label="Update Blog" />
+          </Section>
+
+          {/* Contacts */}
+          <Section title="Contacts">
+            <NavLinkItem to="/dashboard/contacts" label="All Contacts" />
+          </Section>
         </nav>
 
-        {/* Back to Home Button */}
+        {/* Back to Home */}
         <div className="pt-8">
           <Link
             to="/"
@@ -194,8 +124,16 @@ const DashboardLayout = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
-      <main className="min-h-screen flex-1 bg-black p-6 text-white">
+      {/* Hamburger button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="absolute right-8 top-8 z-40 rounded-md border border-white bg-gray-800 p-1 text-white lg:hidden"
+      >
+        {isOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Main content */}
+      <main className="min-h-screen flex-1 p-6">
         <Outlet />
       </main>
     </div>
@@ -203,3 +141,27 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
+
+// Reusable Components
+const Section = ({ title, children }) => (
+  <div>
+    <p className="mb-2 mt-4 text-sm uppercase text-gray-400">{title}</p>
+    {children}
+  </div>
+);
+
+const NavLinkItem = ({ to, label }) => {
+  const linkClass =
+    "block px-4 py-2 rounded hover:bg-gray-700 transition duration-200";
+  const activeClass = "bg-gray-700";
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `${linkClass} ${isActive ? activeClass : ""}`
+      }
+    >
+      {label}
+    </NavLink>
+  );
+};

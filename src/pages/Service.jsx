@@ -10,7 +10,7 @@ const Service = () => {
       <MasterLayout>
         <Suspense fallback={<InitLoader />}>
           <Helmet>
-            <title>Service || Lariv - React Portfolio Template</title>
+            <title>Service || React Portfolio Template</title>
             <meta
               name="description"
               content="Lariv - React Portfolio Template"

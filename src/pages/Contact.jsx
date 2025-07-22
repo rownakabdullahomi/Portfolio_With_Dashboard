@@ -10,7 +10,7 @@ const Contact = () => {
       <MasterLayout>
         <Suspense fallback={<InitLoader />}>
           <Helmet>
-            <title>Contact || Lariv - React Portfolio Template</title>
+            <title>Contact || React Portfolio Template</title>
             <meta
               name="description"
               content="Lariv - React Portfolio Template"
