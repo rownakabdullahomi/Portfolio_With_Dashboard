@@ -80,6 +80,26 @@ const DashboardLayout = () => {
               Update Skill
             </NavLink>
           </div>
+          <div>
+  <p className="text-sm uppercase text-gray-400 mb-2 mt-4">Portfolio</p>
+  <NavLink
+    to="/dashboard/create-portfolio"
+    className={({ isActive }) =>
+      `${linkClass} ${isActive ? activeClass : ""}`
+    }
+  >
+    Create Portfolio
+  </NavLink>
+  <NavLink
+    to="/dashboard/update-portfolio/1"
+    className={({ isActive }) =>
+      `${linkClass} ${isActive ? activeClass : ""}`
+    }
+  >
+    Update Portfolio
+  </NavLink>
+</div>
+
         </nav>
 
         {/* Back to Home Button */}

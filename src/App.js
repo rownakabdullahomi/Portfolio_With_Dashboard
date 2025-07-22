@@ -21,6 +21,8 @@ import CreateEducation from "./pages/dashboard/education/CreateEducation";
 import UpdateEducation from "./pages/dashboard/education/UpdateEducation";
 import CreateSkill from "./pages/dashboard/skill/CreateSkill";
 import UpdateSkill from "./pages/dashboard/skill/UpdateSkill";
+import CreatePortfolio from "./pages/dashboard/portfolio/CreatePortfolio";
+import UpdatePortfolio from "./pages/dashboard/portfolio/UpdatePortfolio";
 
 function App() {
   useEffect(() => {
@@ -55,6 +57,9 @@ function App() {
           <Route path="/dashboard/update-education/:id" element={<UpdateEducation />} />
           <Route path="/dashboard/create-skill" element={<CreateSkill />} />
           <Route path="/dashboard/update-skill/:id" element={<UpdateSkill />} />
+          <Route path="/dashboard/create-portfolio" element={<CreatePortfolio />} />
+<Route path="/dashboard/update-portfolio/:id" element={<UpdatePortfolio />} />
+
         </Route>
 
         {/* Fallback Route */}
