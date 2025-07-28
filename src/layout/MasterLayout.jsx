@@ -103,6 +103,16 @@ const MasterLayout = (props) => {
                       Dashboard
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink
+                      className={(navData) =>
+                        navData.isActive ? "navActive" : "navNotActive"
+                      }
+                      to={"/login"}
+                    >
+                      Login
+                    </NavLink>
+                  </li>
                 </ul>
               </menu>
               <div className="block lg:hidden">
@@ -224,6 +234,18 @@ const MasterLayout = (props) => {
                     to={"/dashboard/home"}
                   >
                     Dashboard
+                  </NavLink>
+                </li>
+                <li className=" text-[18px] font-semibold">
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive
+                        ? "inline-block py-[8px]  text-theme"
+                        : "inline-block py-[8px]  text-white transition-all duration-300 hover:text-theme"
+                    }
+                    to={"/login"}
+                  >
+                    Login
                   </NavLink>
                 </li>
               </ul>

@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import BlogDetails from "./pages/BlogDetails";
 import Error from "./pages/Error";
+import Login from "./pages/Login";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,6 +33,8 @@ import UpdateBlog from "./pages/dashboard/blog/UpdateBlog";
 import ShowContacts from "./pages/dashboard/contact/ShowContacts";
 import ContactDetails from "./pages/dashboard/contact/ContactDetails";
 
+
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -54,6 +57,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog-details" element={<BlogDetails />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+
 
         {/* Dashboard Layout with Nested Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
